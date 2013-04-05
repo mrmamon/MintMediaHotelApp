@@ -14,12 +14,21 @@
         android:layout_alignParentTop="true" >
 
         <ImageView
-            android:id="@+id/imageSlideshow"
+            android:id="@+id/imviewSlide1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:contentDescription="@string/content_description"
             android:layout_marginTop="80dp"
+            android:contentDescription="@string/content_description"
             android:src="@drawable/conrad1" />
+
+        <ImageView
+            android:id="@+id/imviewSlide2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/conrad1" />
+
     </FrameLayout>
 
     <HorizontalScrollView
@@ -99,8 +108,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:contentDescription="@string/content_description"
-        android:background="@drawable/bg_navigation" />
+        android:background="@drawable/bg_navigation_main"
+        android:contentDescription="@string/content_description" />
 
     <ImageButton
         android:id="@+id/otp_loginBtn"

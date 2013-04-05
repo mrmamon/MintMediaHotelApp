@@ -17,18 +17,18 @@ public class Setting extends Activity{
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 					WindowManager.LayoutParams.FLAG_FULLSCREEN);
-			setContentView(R.layout.popup_setting);
-			
+			setContentView(R.layout.setting);
+
 			Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/TrajanPro-Bold.otf");
 			Button hotelListBtn = (Button)findViewById(R.id.hotelListBtn);
 			Button editProfileBtn = (Button)findViewById(R.id.EditProfileBtn);
 			Button logoutBtn = (Button)findViewById(R.id.LogOutBtn);
-			
+
 			hotelListBtn.setTextColor(Color.parseColor("#9B7C3B"));
 			editProfileBtn.setTypeface(tf);
 			logoutBtn.setTypeface(tf);
-			
-			
+
+
 		}
-		
+
 }

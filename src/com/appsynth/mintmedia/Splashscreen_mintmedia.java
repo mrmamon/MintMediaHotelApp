@@ -28,7 +28,7 @@ public class Splashscreen_mintmedia extends Activity {
 			public void run() {
 				// TODO Auto-generated method stub
 				finish();
-				Intent intent = new Intent(Splashscreen_mintmedia.this,SlideActivity.class);
+				Intent intent = new Intent(Splashscreen_mintmedia.this,HomeActivity.class);
 				startActivity(intent);
 			}
 		}, _splashTime);

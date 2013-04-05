@@ -165,7 +165,7 @@ public class InfoPage extends Activity {
 					// TODO Auto-generated method stub
 				}
 			});
-	        pw1.showAsDropDown(button,-((button.getWidth())/2),0);
+	        pw1.showAsDropDown(button,0,-55);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -8,6 +8,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Gallery;
 import android.widget.ImageView;
@@ -113,5 +114,15 @@ public class ViewPagerAdapter extends PagerAdapter {
 	public float getPageWidth(int position) {
 		// TODO Auto-generated method stub
 		return super.getPageWidth(position);
+	}
+	
+	@Override
+	public void setPrimaryItem(ViewGroup container, int position, Object object) {
+		// TODO Auto-generated method stub
+		super.setPrimaryItem(container, position, object);
+		View view = (View)object;
+		view.setScaleX(1);
+		view.setScaleY(1);
+		view.setAlpha(1f);
 	}
 }

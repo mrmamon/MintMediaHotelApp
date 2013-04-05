@@ -176,11 +176,11 @@ public class SlideActivity extends Activity implements OnCheckedChangeListener {
 	        LayoutInflater inflater = (LayoutInflater) SlideActivity.this
 	                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	     
-	        View layout = inflater.inflate(R.layout.setting,null);
-	        pw = new PopupWindow(layout, LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT, true);
+	        View layout = inflater.inflate(R.layout.popup_setting,null);
+	        pw = new PopupWindow(layout, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
 	        pw.setBackgroundDrawable(new BitmapDrawable());
 	        pw.setOutsideTouchable(true);
-	        pw.showAsDropDown(button, 0, 0);
+	        pw.showAsDropDown(button,-((button.getWidth())/2),0);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

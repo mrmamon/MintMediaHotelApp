@@ -17,7 +17,7 @@ public class Setting extends Activity{
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 					WindowManager.LayoutParams.FLAG_FULLSCREEN);
-			setContentView(R.layout.setting);
+			setContentView(R.layout.popup_setting);
 			
 			Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/TrajanPro-Bold.otf");
 			Button hotelListBtn = (Button)findViewById(R.id.hotelListBtn);

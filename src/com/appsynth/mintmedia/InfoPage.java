@@ -76,8 +76,18 @@ public class InfoPage extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				initiatePopupWindow(newReleaseButton);
+				initiateRestautantPopupWindow(newReleaseButton);
 				newReleaseButton.setBackgroundResource(R.drawable.bg_select);
+			}
+		});
+		
+		final ImageButton SettingButton = (ImageButton)findViewById(R.id.SettingButton);
+		SettingButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				initiateSettingPopupWindow(SettingButton);
 			}
 		});
 	}
@@ -116,11 +126,11 @@ public class InfoPage extends Activity {
 
 	private PopupWindow pw;
 	
-	private void initiatePopupWindow(Button button) {
+	private void initiateRestautantPopupWindow(Button button) {
 		try {
 	        LayoutInflater inflater = (LayoutInflater) InfoPage.this
 	                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	        View layout = inflater.inflate(R.layout.popup_layout,null);
+	        View layout = inflater.inflate(R.layout.popup_restautant,null);
 	        pw = new PopupWindow(layout, LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT, true);
 	        pw.setBackgroundDrawable(new BitmapDrawable());
 	        pw.setOutsideTouchable(true);
@@ -134,6 +144,28 @@ public class InfoPage extends Activity {
 			});
 	        Button subbutt1 = (Button)findViewById(R.id.BayViewButton);
 	        pw.showAsDropDown(button, 0, 5);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void initiateSettingPopupWindow(ImageButton button) {
+		PopupWindow pw1;
+		try {
+	        LayoutInflater inflater = (LayoutInflater) InfoPage.this
+	                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	        View layout = inflater.inflate(R.layout.popup_setting,null);
+	        pw1 = new PopupWindow(layout, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
+	        pw1.setBackgroundDrawable(new BitmapDrawable());
+	        pw1.setOutsideTouchable(true);
+	        pw1.setOnDismissListener(new OnDismissListener() {
+				@Override
+				public void onDismiss() {
+					// TODO Auto-generated method stub
+				}
+			});
+	        pw1.showAsDropDown(button,-((button.getWidth())/2),0);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

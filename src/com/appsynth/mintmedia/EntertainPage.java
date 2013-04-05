@@ -21,13 +21,14 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.appsynth.pagercontainer.LoopingPagerContainer;
 import com.appsynth.pagercontainer.PagerContainer;
 
 public class EntertainPage extends Activity {
 
 	FrameLayout outerLayout;
 	PagerContainer topContainer;
-	PagerContainer centerContainer;
+	LoopingPagerContainer centerContainer;
 	ImageView movieSelectView;
 	boolean touching;
 	
@@ -36,7 +37,7 @@ public class EntertainPage extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_screen_slide);
+		setContentView(R.layout.entertain);
 		Typeface trajanProFont = Typeface.createFromAsset(getAssets(), "fonts/TrajanPro-Bold.otf");
 		outerLayout = (FrameLayout)findViewById(R.id.content);
 		movieSelectView = (ImageView)findViewById(R.id.movie_select_view);
@@ -51,12 +52,11 @@ public class EntertainPage extends Activity {
 		pager.setClipChildren(false);
 		pager.setCurrentItem(2);
 		
-		centerContainer = (PagerContainer)findViewById(R.id.midContainer);
+		centerContainer = (LoopingPagerContainer)findViewById(R.id.midContainer);
 		ViewPager contentPager = centerContainer.getViewPager();
 		ViewPagerAdapter midAdapter = new ViewPagerAdapter(this, makeDummy(midImgArra), true);
 		contentPager.setAdapter(midAdapter);
 		contentPager.setOffscreenPageLimit(adapter.getCount());
-		//contentPager.setOffscreenPageLimit(5);
 		contentPager.setPageMargin(65);
 		contentPager.setClipChildren(false);
 		contentPager.setCurrentItem(0);

@@ -31,7 +31,8 @@ public class EntertainPage extends Activity {
 	LoopingPagerContainer centerContainer;
 	ImageView movieSelectView;
 	boolean touching;
-	
+
+	private final int DUMMY_NUM = 3;
 	private int imgArra[] = {0, 1, 2};
 	private int midImgArra[] = {R.drawable.hungergame_l, R.drawable.lifeofpi_l, R.drawable.cloudatlas_l, R.drawable.stoker_l};
 	@Override
@@ -50,7 +51,7 @@ public class EntertainPage extends Activity {
 		pager.setOffscreenPageLimit(adapter.getCount());
 		pager.setPageMargin(30);
 		pager.setClipChildren(false);
-		pager.setCurrentItem(2);
+		pager.setCurrentItem(1);
 		
 		centerContainer = (LoopingPagerContainer)findViewById(R.id.midContainer);
 		ViewPager contentPager = centerContainer.getViewPager();
@@ -59,7 +60,7 @@ public class EntertainPage extends Activity {
 		contentPager.setOffscreenPageLimit(adapter.getCount());
 		contentPager.setPageMargin(65);
 		contentPager.setClipChildren(false);
-		contentPager.setCurrentItem(0);
+		contentPager.setCurrentItem(DUMMY_NUM);
 		contentPager.setPageTransformer(true, new DepthPageTransformer());
 		contentPager.setOnTouchListener(new OnTouchListener() {
 			
@@ -170,7 +171,6 @@ public class EntertainPage extends Activity {
 	}
 	
 	private int[] makeDummy(int[] inputArray) {
-		final int DUMMY_NUM = 3;
 		
 		int count = inputArray.length;
 		if(DUMMY_NUM > count) {
@@ -190,5 +190,9 @@ public class EntertainPage extends Activity {
 			}
 		}
 		return outputArray;
+	}
+	
+	public void backToHome(View view) {
+		finish();
 	}
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HotelApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="slide">...</string>
+    <string name="checkbox">checkBox</string>
+    <string name="content_description">description</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_screen_slide">Screen Slide</string>
+    <string name="title_layout_changes">Layout Changes</string>
+    <string name="action_toggle">Toggle indicator</string>
+    <string name="title_activity_screen_slide">ScreenSlideActivity</string>
+    <string name="new_releases_button">New Releases</string>
+    <string name="popular_button">Popular</string>
+    <string name="purchased_button">Purchased</string>
+    <string name="genre_button">Genre</string>
+
+</resources>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="1280dp"
+        android:layout_height="800dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/imageSlideshow"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/content_description"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/conrad1" />
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/ScrollViewMainmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/bg_menu" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/personalBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/personal_btn" />
+
+            <ImageButton
+                android:id="@+id/infoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/info_btn" />
+
+            <ImageButton
+                android:id="@+id/entertainBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/entertainment_btn" />
+
+            <ImageButton
+                android:id="@+id/nearbyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/nearby_btn" />
+
+            <ImageButton
+                android:id="@+id/bookingBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/booking_btn" />
+
+            <ImageButton
+                android:id="@+id/promotionBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/promotion_btn" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/head_navigation"
+        android:layout_width="1280dp"
+        android:layout_height="160dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/content_description"
+        android:background="@drawable/bg_navigation" />
+
+    <ImageButton
+        android:id="@+id/otp_loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/otp_btn" />
+
+    <ImageButton
+        android:id="@+id/settingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/setting_btn" />
+
+    <RadioGroup
+        android:id="@+id/radioGr_slideImage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/head_navigation"
+        android:layout_marginTop="390dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp" >
+
+        
+        <RadioButton
+            android:id="@+id/radbtn_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_selector"
+            android:checked="true"
+            android:padding="5dp" />
+
+        <RadioButton
+            android:id="@+id/radbtn_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_selector"
+            android:padding="5dp" />
+
+        <RadioButton
+            android:id="@+id/radbtn_image3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_selector"
+            android:padding="5dp" />
+
+        <RadioButton
+            android:id="@+id/radbtn_image4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_selector"
+            android:padding="5dp" />
+
+        <RadioButton
+            android:id="@+id/radbtn_image5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_selector"
+            android:padding="5dp" />
+        
+        <RadioButton
+            android:id="@+id/radbtn_image6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_selector"
+            android:padding="5dp" />
+        
+        
+    </RadioGroup>
+
+</RelativeLayout>

@@ -146,13 +146,13 @@ public class EntertainPage extends Activity {
 				float scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position));
 				view.setScaleX(scaleFactor);
 				view.setScaleY(scaleFactor);
-				view.setTranslationY(position * pageTranslateY);
+				//view.setTranslationY(position * pageTranslateY);
 			} else if(position == 0) {
 				view.setAlpha(1);
 				//view.setTranslationX(0);
 				view.setScaleX(1);
 				view.setScaleY(1);
-				view.setTranslationY(0);
+				//view.setTranslationY(0);
 				
 			} else if(position <= 1) { // (0, 1]
 				view.setAlpha(1 - position / 2);
@@ -161,7 +161,7 @@ public class EntertainPage extends Activity {
 				float scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position));
 				view.setScaleX(scaleFactor);
 				view.setScaleY(scaleFactor);
-				view.setTranslationY(-position * pageTranslateY);
+				//view.setTranslationY(-position * pageTranslateY);
 			} else {
 				view.setAlpha(0.5f);
 				view.setScaleX(MIN_SCALE);

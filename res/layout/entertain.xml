@@ -118,10 +118,10 @@
 
                     <ImageView
                         android:id="@+id/movie_select_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="384dp"
+                        android:layout_height="534dp"
                         android:layout_gravity="center_vertical|center_horizontal"
-                        android:scaleType="center"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/movie_select" />
 
                     <com.appsynth.pagercontainer.LoopingPagerContainer
@@ -136,9 +136,9 @@
                         <android.support.v4.view.ViewPager
                             android:id="@+id/contentViewPager"
                             android:layout_width="310dp"
-                            android:layout_height="920dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="40dp" >
+                            android:layout_height="460dp"
+                            android:layout_gravity="center_vertical|center_horizontal" >
+
                         </android.support.v4.view.ViewPager>
                     </com.appsynth.pagercontainer.LoopingPagerContainer>
                 </FrameLayout>

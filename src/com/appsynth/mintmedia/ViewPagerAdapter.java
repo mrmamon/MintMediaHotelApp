@@ -43,27 +43,32 @@ public class ViewPagerAdapter extends PagerAdapter {
 	@SuppressLint("NewApi")
 	@Override
 	public Object instantiateItem(View collection, int position) {
-		if(isImage) {
+		if(isImage) { /*
 			LinearLayout lLayout = new LinearLayout(activity);
 			lLayout.setOrientation(LinearLayout.VERTICAL);
-			lLayout.setGravity(Gravity.TOP);
+			lLayout.setGravity(Gravity.TOP); */
 			ImageView view = new ImageView(activity);
 			view.setBackgroundResource(imageArray[position]);
-			view.setLayoutParams(new LayoutParams(310, 460));
+			view.setLayoutParams(new LayoutParams(310, 460)); /*
 			ImageView mirrorView = new ImageView(activity);
 			mirrorView.setBackgroundResource(imageArray[position]);
-			mirrorView.setLayoutParams(new LayoutParams(310, 460));
-			if(position != 0) {
+			mirrorView.setLayoutParams(new LayoutParams(310, 460)); */
+			if(position != 0) { /*
 				lLayout.setScaleX(0.75f);
 				lLayout.setScaleY(0.75f);
-				lLayout.setAlpha(0.5f);
-			}
+				lLayout.setAlpha(0.5f); */
+				view.setScaleX(0.75f);
+				view.setScaleY(0.75f);
+				view.setAlpha(0.5f);
+			} /*
 			mirrorView.setScaleY(-1f);
 			mirrorView.setAlpha(0.1f);
 			lLayout.addView(view);
 			lLayout.addView(mirrorView);
 			((ViewPager) collection).addView(lLayout, 0);
-			return lLayout;
+			return lLayout; */
+			((ViewPager) collection).addView(view, 0);
+			return view;
 		} else {
 			TextView view = new TextView(activity);
 			//Button view = new Button(activity);

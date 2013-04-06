@@ -8,6 +8,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Gallery;
 import android.widget.ImageView;
@@ -43,27 +44,37 @@ public class ViewPagerAdapter extends PagerAdapter {
 	@SuppressLint("NewApi")
 	@Override
 	public Object instantiateItem(View collection, int position) {
-		if(isImage) {
+		if(isImage) { 
 			LinearLayout lLayout = new LinearLayout(activity);
 			lLayout.setOrientation(LinearLayout.VERTICAL);
-			lLayout.setGravity(Gravity.TOP);
+			lLayout.setGravity(Gravity.TOP); 
+			LinearLayout dummyLayout = new LinearLayout(activity);
+			dummyLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, 0, 3));
 			ImageView view = new ImageView(activity);
 			view.setBackgroundResource(imageArray[position]);
-			view.setLayoutParams(new LayoutParams(310, 460));
+			//view.setLayoutParams(new LinearLayout.LayoutParams(310, 460, 3)); 
+			view.setLayoutParams(new LinearLayout.LayoutParams(310, 0, 3)); 
 			ImageView mirrorView = new ImageView(activity);
 			mirrorView.setBackgroundResource(imageArray[position]);
-			mirrorView.setLayoutParams(new LayoutParams(310, 460));
-			if(position != 0) {
+			//mirrorView.setLayoutParams(new LinearLayout.LayoutParams(310, 460, 3)); 
+			mirrorView.setLayoutParams(new LinearLayout.LayoutParams(310, 0, 3)); 
+			if(position != 0) { 
 				lLayout.setScaleX(0.75f);
 				lLayout.setScaleY(0.75f);
-				lLayout.setAlpha(0.5f);
-			}
+				lLayout.setAlpha(0.5f); /*
+				view.setScaleX(0.75f);
+				view.setScaleY(0.75f);
+				view.setAlpha(0.5f); */
+			} 
 			mirrorView.setScaleY(-1f);
 			mirrorView.setAlpha(0.1f);
+			lLayout.addView(dummyLayout);
 			lLayout.addView(view);
 			lLayout.addView(mirrorView);
 			((ViewPager) collection).addView(lLayout, 0);
-			return lLayout;
+			return lLayout; /*
+			((ViewPager) collection).addView(view, 0);
+			return view; */
 		} else {
 			TextView view = new TextView(activity);
 			//Button view = new Button(activity);
@@ -108,5 +119,15 @@ public class ViewPagerAdapter extends PagerAdapter {
 	public float getPageWidth(int position) {
 		// TODO Auto-generated method stub
 		return super.getPageWidth(position);
+	}
+	
+	@Override
+	public void setPrimaryItem(ViewGroup container, int position, Object object) {
+		// TODO Auto-generated method stub
+		super.setPrimaryItem(container, position, object);
+		View view = (View)object;
+		view.setScaleX(1);
+		view.setScaleY(1);
+		view.setAlpha(1f);
 	}
 }

@@ -21,22 +21,24 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.appsynth.pagercontainer.LoopingPagerContainer;
 import com.appsynth.pagercontainer.PagerContainer;
 
 public class EntertainPage extends Activity {
 
 	FrameLayout outerLayout;
 	PagerContainer topContainer;
-	PagerContainer centerContainer;
+	LoopingPagerContainer centerContainer;
 	ImageView movieSelectView;
 	boolean touching;
-	
+
+	private final int DUMMY_NUM = 3;
 	private int imgArra[] = {0, 1, 2};
 	private int midImgArra[] = {R.drawable.hungergame_l, R.drawable.lifeofpi_l, R.drawable.cloudatlas_l, R.drawable.stoker_l};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_screen_slide);
+		setContentView(R.layout.entertain);
 		Typeface trajanProFont = Typeface.createFromAsset(getAssets(), "fonts/TrajanPro-Bold.otf");
 		outerLayout = (FrameLayout)findViewById(R.id.content);
 		movieSelectView = (ImageView)findViewById(R.id.movie_select_view);
@@ -49,17 +51,16 @@ public class EntertainPage extends Activity {
 		pager.setOffscreenPageLimit(adapter.getCount());
 		pager.setPageMargin(30);
 		pager.setClipChildren(false);
-		pager.setCurrentItem(2);
+		pager.setCurrentItem(1);
 		
-		centerContainer = (PagerContainer)findViewById(R.id.midContainer);
+		centerContainer = (LoopingPagerContainer)findViewById(R.id.midContainer);
 		ViewPager contentPager = centerContainer.getViewPager();
 		ViewPagerAdapter midAdapter = new ViewPagerAdapter(this, makeDummy(midImgArra), true);
 		contentPager.setAdapter(midAdapter);
 		contentPager.setOffscreenPageLimit(adapter.getCount());
-		//contentPager.setOffscreenPageLimit(5);
 		contentPager.setPageMargin(65);
 		contentPager.setClipChildren(false);
-		contentPager.setCurrentItem(0);
+		contentPager.setCurrentItem(DUMMY_NUM);
 		contentPager.setPageTransformer(true, new DepthPageTransformer());
 		contentPager.setOnTouchListener(new OnTouchListener() {
 			
@@ -145,13 +146,13 @@ public class EntertainPage extends Activity {
 				float scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position));
 				view.setScaleX(scaleFactor);
 				view.setScaleY(scaleFactor);
-				view.setTranslationY(position * pageTranslateY);
+				//view.setTranslationY(position * pageTranslateY);
 			} else if(position == 0) {
 				view.setAlpha(1);
 				//view.setTranslationX(0);
 				view.setScaleX(1);
 				view.setScaleY(1);
-				view.setTranslationY(0);
+				//view.setTranslationY(0);
 				
 			} else if(position <= 1) { // (0, 1]
 				view.setAlpha(1 - position / 2);
@@ -160,7 +161,7 @@ public class EntertainPage extends Activity {
 				float scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position));
 				view.setScaleX(scaleFactor);
 				view.setScaleY(scaleFactor);
-				view.setTranslationY(-position * pageTranslateY);
+				//view.setTranslationY(-position * pageTranslateY);
 			} else {
 				view.setAlpha(0.5f);
 				view.setScaleX(MIN_SCALE);
@@ -170,7 +171,6 @@ public class EntertainPage extends Activity {
 	}
 	
 	private int[] makeDummy(int[] inputArray) {
-		final int DUMMY_NUM = 3;
 		
 		int count = inputArray.length;
 		if(DUMMY_NUM > count) {
@@ -190,5 +190,9 @@ public class EntertainPage extends Activity {
 			}
 		}
 		return outputArray;
+	}
+	
+	public void backToHome(View view) {
+		finish();
 	}
 }
